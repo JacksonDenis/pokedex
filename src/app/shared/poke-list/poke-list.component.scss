@@ -1,0 +1,92 @@
+@import "../../../config-scss/rem-calc.scss";
+@import "../../../config-scss/variables.scss";
+@import "../../../config-scss/reset.scss";
+
+$padding: rem-calc(20);
+:host .listagem {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: $padding 0;
+    .pokemon {
+        position: relative;
+        display: flex;
+        width: calc(48% - 2.5rem);
+        height: rem-calc(117);
+        background: var(--branco);
+        border-radius: rem-calc(10);
+        margin-bottom: rem-calc(10);
+        padding: $padding;
+        flex-direction: column;
+
+        text-decoration: none;
+        color: var(--primary-color);
+
+        &__details {
+            display: flex;
+            align-items: center;
+        }
+
+        &__titulos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                font-size: rem-calc(22);
+                font-size: italic;
+                font-weight: 700;
+                text-transform: capitalize;
+
+                margin-bottom: rem-calc(10);
+            }
+
+            h3 {
+                font-size: rem-calc(22);
+                font-size: italic;
+                font-weight: 700;
+                text-transform: capitalize;
+                background: var(--cinza);
+                border-radius: 20%;
+                margin-bottom: rem-calc(10);
+            }
+        }
+
+        &__status {
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    background: var(--cinza);
+                    font-size: rem-calc(10);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: rem-calc(60);
+
+                    border-radius: rem-calc(50);
+                    margin-bottom: rem-calc(5);
+                }
+            }
+        }
+
+        &__image {
+            position: absolute;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: rem-calc(90);
+            width: rem-calc(110);
+            right: $padding;
+            bottom: $padding;
+
+            background: url(../../../assets/bg/background-list-pokemons.svg) no-repeat;
+
+            img {
+                width: rem-calc(60);
+            }
+        }
+    }
+}
